@@ -1,5 +1,8 @@
 {
   "name": "ionic_hack_the_crisis",
-  "integrations": {},
-  "type": "angular"
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular",
+  "id": "779df3d2"
 }
