@@ -18,28 +18,26 @@
         <ion-card>
           <ion-card-header>
             <ion-card-title>
-              <h1>How do you feel?</h1>
+              <h1>Are you using DPI?</h1>
             </ion-card-title>
           </ion-card-header>
+
           <ion-card-content>
             <ion-list>
               <ion-radio-group>
                 <ion-item>
-                  <ion-label>Cough</ion-label>
-                  <ion-radio slot="start" color="danger" value="cough"></ion-radio>
+                  <ion-label>Yes</ion-label>
+                  <ion-radio slot="start" color="danger" value="yes"></ion-radio>
                 </ion-item>
+
                 <ion-item>
-                  <ion-label>Fever</ion-label>
-                  <ion-radio slot="start" color="tertiary" value="fever"></ion-radio>
-                </ion-item>
-                <ion-item>
-                  <ion-label>Fine</ion-label>
-                  <ion-radio slot="start" color="success" value="fine"></ion-radio>
+                  <ion-label>No</ion-label>
+                  <ion-radio slot="start" color="tertiary" value="no"></ion-radio>
                 </ion-item>
               </ion-radio-group>
             </ion-list>
             <ion-button class="ion-activatable ripple-parent" shape="round" fill="outline"
-              [routerLink]="['/tabs/tab4']">Go next!
+              [routerLink]="['/tabs/tab5']">Go next!
               <ion-ripple-effect></ion-ripple-effect>
             </ion-button>
           </ion-card-content>

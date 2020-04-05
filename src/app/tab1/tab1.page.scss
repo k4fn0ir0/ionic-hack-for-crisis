@@ -1,25 +1,10 @@
 ion-content ion-toolbar {
   --background: translucent;
 }
-
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
-#survey {
-  font-size: larger;
-}
-
-#track-me{
-  background-color: green;
-}
-
 .ripple-parent {
   position: relative;
   overflow: hidden;
+}
+#track-img{
+  height: 150px;
 }

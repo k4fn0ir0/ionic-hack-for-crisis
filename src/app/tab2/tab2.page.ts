@@ -14,7 +14,9 @@ export class Tab2Page {
     emoticon: "sad-outline",
     tip: "Send your report to the hospital for a check",
     action: "Send my report",
-    link: ""
+    link: "",
+    disabled:false
+
   }, {
     title: "You're doing great!",
     description: "Your score is meets the safety standards",
@@ -22,20 +24,19 @@ export class Tab2Page {
     emoticon: "happy-outline",
     tip: "Stay safe, and wash your hands",
     action: "Give me more tips",
-    link: ""
+    link: "",
+    disabled: true
   }];
 
-  title: string = "My score"
+  title: string = "My score";
+
   status: any;
-  constructor(private covid: CovidService) {
+
+  constructor() {
     this.status = this._status[Date.now() % this._status.length];
   }
   getPercentage(){
     return this.status.score/100;
-  }
-
-  doCall(){
-    this.covid.getInfo();
   }
 
 }

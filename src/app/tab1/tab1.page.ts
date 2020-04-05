@@ -6,15 +6,33 @@ import { Component } from '@angular/core';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
+  private _status = [{
+    title: "Your health is at risk",
+    description: "Your score is too high",
+    score: 87,
+    emoticon: "sad-outline",
+    tip: "Send your report to the hospital for a check",
+    action: "Send my report",
+    link: ""
+  }, {
+    title: "You're doing great!",
+    description: "Your score is meets the safety standards",
+    score: 32,
+    emoticon: "happy-outline",
+    tip: "Stay safe, and wash your hands",
+    action: "Give me more tips",
+    link: ""
+  }];
 
-  title:string = "My trips";
-  //bottone immagine trip
-  //Are you going out?
-  //Press the circle above and remember the social distance!
+  title: string = "My trips";
 
-  //Pro-tip: extra bonus if you keep tracking function on for th next 24 hours
-  //butto Yes, track my next 24h!
+  status: any;
 
-  constructor() {}
+  constructor() {
+    this.status = this._status[Date.now() % this._status.length];
+  }
+  getPercentage() {
+    return this.status.score / 100;
+  }
 
 }

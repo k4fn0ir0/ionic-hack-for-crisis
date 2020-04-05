@@ -12,22 +12,52 @@
       <ion-title size="large">{{title}}</ion-title>
     </ion-toolbar>
   </ion-header>
-  <div id="container">
-    <ion-icon name="walk" size="large"></ion-icon>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>
+              <ion-icon [name]="status.emoticon" size="large"> </ion-icon>
+              {{status.title}}
+            </ion-card-title>
+            <ion-card-subtitle>
+              {{status.description}}
+            </ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <h1>{{status.score}}%</h1>
+            <ion-progress-bar color="primary" [value]="getPercentage()"></ion-progress-bar>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card button [routerLink]="['/tabs/tab0']" class="ion-float-left">
+          <img src="./assets/images/track-green.png" />
+          <ion-card-header>
+            <ion-card-title>
+              <h1>Are you going out?</h1>
+            </ion-card-title>
+            <ion-card-subtitle>Press here and remember the social distance!</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
 
-    <h1>Are you going out?</h1>
-    <p>Press the circle above and remember the social distance!</p>
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>Pro tip</ion-card-title>
-        <ion-card-subtitle>extra bonus if you keep tracking function on for th next 24 hours</ion-card-subtitle>
-      </ion-card-header>
-
-      <ion-card-content>
-        <ion-button class="ion-activatable ripple-parent" shape="round" fill="outline">Yes, track my next 24h!
-          <ion-ripple-effect></ion-ripple-effect>
-        </ion-button>
-      </ion-card-content>
-    </ion-card>
-  </div>
+      <ion-col>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Pro tip</ion-card-title>
+            <ion-card-subtitle>extra bonus if you keep tracking function on for th next 24 hours</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-button class="ion-activatable ripple-parent" shape="round" fill="outline" [disabled]="status.disabled">Yes, track my next 24h!
+              <ion-ripple-effect></ion-ripple-effect>
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
